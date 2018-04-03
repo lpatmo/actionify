@@ -1,0 +1,26 @@
+{
+
+  "manifest_version": 2,
+  "name": "Actionify",
+  "version": "1.0",
+
+  "description": "Adds some things to all webpages.",
+
+
+//  "content_scripts": [
+//    {
+//      "matches": ["*://*/"],
+//      "js": ["actionify.js"]
+ //   }
+  //],
+
+ "browser_action": {
+    "browser_style":true,
+    "default_popup": "actionify.html",
+    "default_icon":{
+      "16": "icons/border-16.png",
+      "32": "icons/border-32.png"
+    }
+
+ }
+}
