@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-# Register your models here.
-from .models import Users, Admins, Events, News, Tags, Actions, SpamActions, EventActions, EventTags, WatchedEvents, UserVotes
-admin.site.register(Users) 
-admin.site.register(Admins) 
-admin.site.register(Events) 
-admin.site.register(News) 
-admin.site.register(Tags) 
-admin.site.register(Actions) 
-admin.site.register(SpamActions) 
-admin.site.register(EventActions) 
-admin.site.register(EventTags) 
-admin.site.register(WatchedEvents) 
-admin.site.register(UserVotes)
+# Regsiter your model here.
+from .models import User, Admin, Event, New, Tag, Action, SpamAction, EventAction, EventTag, WatchedEvent, UserVote
+admin.site.register(User) 
+admin.site.register(Admin) 
+admin.site.register(Event) 
+admin.site.register(New) 
+admin.site.register(Tag) 
+admin.site.register(Action) 
+admin.site.register(SpamAction) 
+admin.site.register(EventAction) 
+admin.site.register(EventTag) 
+admin.site.register(WatchedEvent) 
+admin.site.register(UserVote)
