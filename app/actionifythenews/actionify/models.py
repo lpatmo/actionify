@@ -2,7 +2,7 @@ from django.db import models
 
 class User(models.Model):
    """Users of Actionify the News"""
-   username = models.CharField(max_length=25)
+   username = models.CharField(unique=True, max_length=25)
    #FBID = models.ForeignKey('Facebook', on_delete=models.SET_NULL, null=True)
    #TWID = models.ForeignKey('Twitter', on_delete=models.SET_NULL, null=True)
    def __str__(self):
@@ -13,7 +13,7 @@ class Admin(models.Model):
    userID = models.ForeignKey('User', on_delete=models.CASCADE)
 
 class Event(models.Model):
-    eventName = models.CharField(max_length=200)
+    eventName = models.CharField(unique=True, max_length=200)
     
     def __str__(self):
         return self.eventName
@@ -52,21 +52,36 @@ class Action(models.Model):
 class SpamAction(models.Model):
     actionID = models.ForeignKey('Action', on_delete = models.CASCADE)
     userID = models.ForeignKey('User', on_delete = models.CASCADE)
-
+    def __str__(self):
+        return self.userID.username + " marks spam: " + self.actionID.actionURL
+    class Meta:
+    	unique_together = ('actionID','userID',)
 class EventAction(models.Model):
     eventID = models.ForeignKey('Event', on_delete=models.CASCADE)
     actionID = models.ForeignKey('Action', on_delete=models.CASCADE)
-
+    def __str__(self):
+        return self.eventID.eventName + ": " + self.actionID.actionURL
+    class Meta:
+    	unique_together = ('eventID','actionID',)
 class EventTag(models.Model):
     eventID = models.ForeignKey('Event', on_delete=models.CASCADE)
     tagID = models.ForeignKey('Tag', on_delete=models.CASCADE)
-    
+    def __str__(self):
+        return self.eventID.eventName + ": " + self.tagID.name
+    class Meta:
+    	unique_together = ('eventID','tagID',)
 class WatchedEvent(models.Model):
     userID = models.ForeignKey('User', on_delete=models.CASCADE)
     eventID = models.ForeignKey('Event', on_delete=models.CASCADE)
-    
+    def __str__(self):
+        return self.userID.username + ": " + self.eventID.eventName
+    class Meta:
+    	unique_together = ('userID','eventID',)
 class UserVote(models.Model):
     userID = models.ForeignKey('User', on_delete=models.CASCADE)
     actionID = models.ForeignKey('Action', on_delete=models.CASCADE)
     upvote = models.BooleanField()
-
+    def __str__(self):
+        return self.userID.username + ": " +str(self.upvote)+ " " + self.actionID.actionURL
+    class Meta:
+    	unique_together = ('userID','actionID',)
