@@ -21,6 +21,10 @@
       "16": "icons/border-16.png",
       "32": "icons/border-32.png"
     }
+  },
+  "permissions": [
+   "tabs"
+  ]
 
- }
+
 }

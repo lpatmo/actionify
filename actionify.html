@@ -5,21 +5,43 @@
     	<link rel="stylesheet" href="actionify.css"/>
 	</head>
 <body>
-	<div>Actionify The News</div>
-	<section id="newsURL">
-		<label>News URL</label>
-		<input type="text" value="INSERTURLHERE">
-	</section>
-	<section id="actions">
-		<label>Actions you can take</label>
-		<div class="action">
-			<div class="actionText"></div>
-			<div><span>I have taken this action</span><span>I disagree</span></div>
-			<div>Spread the word. Icon Icon Icon
-				<br><span>I haven't actually taken this action</span>
+	<h1>Actionify The News</h1>
+	<div id="TakeAction">
+		<section>
+			<label>News URL</label>
+			<input id="newsURL" type="text" placeholder="https://" readonly="readonly">
+		</section>
+		<section id="actions">
+			<label>Actions you can take</label>
+			<div class="action">
+				<div class="actionText"></div>
+				<div><span>I have taken this action</span><span>I disagree</span></div>
+				<div>Spread the word. Icon Icon Icon
+					<br><span>I haven't actually taken this action</span>
+				</div>
 			</div>
-		</div>
-	</section>
-	<button>Recommend an action for this page.</button>	
+		</section>
+		<button id="RecommendBtn">Recommend an action for this page.</button>	
+	</div>
+	<div id="SubmitForm" class="hidden">
+		<form>
+			<section>
+			<label>Link an action suggestion!</label><input type="text" placeholder="https://"></section>
+			<section>
+    		<label>A short desciption</label><textarea rows="3" cols="30" placeholder="Description"></textarea>
+    		</section>
+    		<section>
+        <input type="radio" id="r1" name="actiontype" value="Petition"><label>Petition</label>
+        <input type="radio" id="r2" name="actiontype" value="Donation"><label>Donation</label>
+        <input type="radio" id="r3" name="actiontype" value="Vote"><label>Vote</label>
+        <input type="radio" id="r4" name="actiontype" value="Call"><label>Call</label>
+        <input type="radio" id="r5" name="actiontype" value="Attend an Event"><label>Attend an Event</label>
+        <input type="radio" id="r6" name="actiontype" value="Other"><label>Other</label>
+    	<input type="button" value="Submit" id="SubmitBtn">
+    	<input type="button" value="Back" id="CancelBtn">
+    </section>
+		</form>
+	</div>
+<script type="text/javascript" src="actionify.js"></script>
 </body>
 </html>
