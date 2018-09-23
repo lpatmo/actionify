@@ -7,3 +7,10 @@ def index(request):
 		'index.html'
 		##context = {'':, '':,}
 		)
+
+def profile(request):
+	return render(
+		request,
+		'profile.html'
+		##context = {'':, '':,}
+		)

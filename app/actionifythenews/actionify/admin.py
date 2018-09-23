@@ -1,9 +1,7 @@
 from django.contrib import admin
 
 # Regsiter your model here.
-from .models import User, Admin, Event, New, Tag, Action, SpamAction, EventAction, EventTag, WatchedEvent, UserVote
-admin.site.register(User) 
-admin.site.register(Admin) 
+from .models import Event, New, Tag, Action, SpamAction, EventAction, EventTag, WatchedEvent, UserVote
 admin.site.register(Event) 
 admin.site.register(New) 
 admin.site.register(Tag) 

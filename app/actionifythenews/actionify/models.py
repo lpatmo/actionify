@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class User(models.Model):
    """Users of Actionify the News"""
@@ -48,6 +49,14 @@ class Action(models.Model):
     
     def __str__(self):
         return self.actionURL
+
+class UserAction(models.Model):
+    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    actionID = models.ForeignKey('Action', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.user.username + ": " + self.actionID.actionURL
+    class Meta:
+    	unique_together = ('user','actionID',)
 
 class SpamAction(models.Model):
     actionID = models.ForeignKey('Action', on_delete = models.CASCADE)
