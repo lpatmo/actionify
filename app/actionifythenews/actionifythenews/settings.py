@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'actionify.apps.ActionifyConfig'
+    'actionify.apps.ActionifyConfig',
+    'accounts'
 ]
 
 MIDDLEWARE = [
