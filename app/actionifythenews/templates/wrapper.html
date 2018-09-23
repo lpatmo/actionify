@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actionify the News</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header>
+    <h2><a href="#">Actionify the News</a></h2>
+  </header>
+
+{% block content %}
+{% endblock %}
+  <footer>
+    <p>&copy 2018 concerned people</a></p>
+    <p>Sign up for early access</p>
+    <ul>
+      <li><a href="https://twitter.com/actionifynews"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+      <li><a href="https://www.facebook.com/actionifynews/"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+    </ul>
+    <ul>
+        {% if user.is_authenticated %}
+         <li>User: {{ user.get_username }}</li>
+         <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
+       {% else %}
+         <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
+       {% endif %} 
+       </ul>
+  </footer>
+
+</body>
+</html>
