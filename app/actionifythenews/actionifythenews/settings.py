@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'actionify.apps.ActionifyConfig',
+    'django.contrib.auth',
+    'django.contrib.contenttypes'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'actionifythenews.urls'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 
 TEMPLATES = [
     {
