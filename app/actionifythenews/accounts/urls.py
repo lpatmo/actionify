@@ -6,5 +6,5 @@ from django.urls import include
 from django.conf.urls import url
 
 urlpatterns = [
-    path('signup/', views.SignUp.as_view(), name='signup'),
+    url(r'^signup/$', views.signup, name='signup'),
 ]

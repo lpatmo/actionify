@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <h2><a href="#">Actionify the News</a></h2>
+    <h2><a href="{% url 'index'%}">Actionify the News</a></h2>
     <ul>
       {% if user.is_authenticated %}
        <li>User: {{ user.get_username }}</li>

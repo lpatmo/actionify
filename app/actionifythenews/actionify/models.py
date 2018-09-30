@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class User(models.Model):
    """Users of Actionify the News"""
    username = models.CharField(unique=True, max_length=25)
+   email = models.EmailField(unique=True, max_length=255, blank=False)
    #FBID = models.ForeignKey('Facebook', on_delete=models.SET_NULL, null=True)
    #TWID = models.ForeignKey('Twitter', on_delete=models.SET_NULL, null=True)
    def __str__(self):

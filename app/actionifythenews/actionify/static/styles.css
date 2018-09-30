@@ -85,12 +85,13 @@ section p {
 /*Header Styles*/
 
 header {
-	position: absolute;
+	background: #428cf4;
+	/*#80A3DB*/
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 35px 100px 0;
+	padding: 20px;
 	animation: 1s fadein 0.5s forwards;
 	opacity: 0;
 	color: #fff;
@@ -102,7 +103,12 @@ header {
 		opacity: 1;
 	}
 }
-
+header ul { 
+	display: flex;
+}
+header ul li { 
+	padding: 0px 5px;
+}
 header nav {
 	display: flex;
 	margin-right: -15px;
@@ -142,7 +148,7 @@ header nav li {
 	height: 100%;
 	background-size: cover;
 	z-index: -1;
-	background-color: #80a3db;
+	background-color: #428cf4;
   background-position-y: -60px;
 }
 
